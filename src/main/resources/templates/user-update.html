@@ -1,0 +1,148 @@
+<!--<!DOCTYPE HTML>-->
+<!--<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8"/>-->
+<!--    <title>Update users</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<style>table {-->
+<!--    border-spacing: 0 10px;-->
+<!--    font-family: 'Open Sans', sans-serif;-->
+<!--    font-weight: bold;-->
+<!--}-->
+
+<!--th {-->
+<!--    padding: 10px 20px;-->
+<!--    background: #06466c;-->
+<!--    color: #17d8ec;-->
+<!--    border-right: 2px solid;-->
+<!--    font-size: 0.9em;-->
+<!--}-->
+
+<!--th:first-child {-->
+<!--    text-align: left;-->
+<!--}-->
+
+<!--th:last-child {-->
+<!--    border-right: none;-->
+<!--}-->
+
+<!--td {-->
+<!--    vertical-align: middle;-->
+<!--    padding: 10px;-->
+<!--    font-size: 14px;-->
+<!--    text-align: center;-->
+<!--    border-top: 2px solid #17d8ec;-->
+<!--    border-bottom: 2px solid #17d8ec;-->
+<!--    border-right: 2px solid #17d8ec;-->
+<!--}-->
+
+<!--td:first-child {-->
+<!--    border-left: 2px solid #17d8ec;-->
+<!--    border-right: none;-->
+<!--}-->
+
+<!--td:nth-child(2) {-->
+<!--    text-align: left;-->
+<!--}</style>-->
+<!--<form action="#" th:action="@{/user/user-update}" th:object="${user}" method="post">-->
+<!--    <label for="id">ID</label>-->
+<!--    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">-->
+<!--    <br/>-->
+<!--    <label for="username">User name</label>-->
+<!--    <input type="text" th:field="*{username}" id="username" placeholder="username">-->
+<!--    <br/>-->
+<!--    <br>-->
+<!--    <label for="surname">surname: </label>-->
+<!--    <input type="text" th:field="*{surname}" id="surname">-->
+<!--    <br>-->
+<!--    <label for="age">age: </label>-->
+<!--    <input type="text" th:field="*{age}" id="age">-->
+<!--    <br>-->
+<!--    <label for="password">Password</label>-->
+<!--    <input type="password" th:field="*{password}" id="password" placeholder="password">-->
+<!--    <br/>-->
+<!--    <input type="submit" value="Update">-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Update users</title>
+    <style>
+        table {
+            border-spacing: 0 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+        }
+
+        th {
+            padding: 10px 20px;
+            background: #17d8ec;
+            color: #06466c;
+            border-right: 2px solid;
+            font-size: 0.9em;
+        }
+
+        th:first-child {
+            text-align: left;
+        }
+
+        th:last-child {
+            border-right: none;
+        }
+
+        td {
+            vertical-align: middle;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+            border-top: 2px solid #17d8ec;
+            border-bottom: 2px solid #17d8ec;
+            border-right: 2px solid #17d8ec;
+        }
+
+        td:first-child {
+            border-left: 2px solid #17d8ec;
+            border-right: none;
+        }
+
+        td:nth-child(2) {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/user/user-update}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <th><label for="id">ID:</label></th>
+            <td><input readonly type="number" th:field="*{id}" id="id" placeholder="ID"></td>
+        </tr>
+        <tr>
+            <th><label for="username">User name:</label></th>
+            <td><input type="text" th:field="*{username}" id="username" placeholder="username"></td>
+        </tr>
+        <tr>
+            <th><label for="surname">Surname:</label></th>
+            <td><input type="text" th:field="*{surname}" id="surname"></td>
+        </tr>
+        <tr>
+            <th><label for="age">Age:</label></th>
+            <td><input type="text" th:field="*{age}" id="age"></td>
+        </tr>
+        <tr>
+            <th><label for="password">Password:</label></th>
+            <td><input type="password" th:field="*{password}" id="password" placeholder="password"></td>
+        </tr>
+    </table>
+    <br/>
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>

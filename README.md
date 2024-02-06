@@ -1,0 +1,2 @@
+# Task-7
+![2024-01-11_19-39-39.png](..%2F..%2FDesktop%2Fspring%20security%2F2024-01-11_19-39-39.png)![2024-01-11_19-39-17.png](..%2F..%2FDesktop%2Fspring%20security%2F2024-01-11_19-39-17.png)![2024-01-11_19-38-40.png](..%2F..%2FDesktop%2Fspring%20security%2F2024-01-11_19-38-40.png)![2024-01-11_19-37-54.png](..%2F..%2FDesktop%2Fspring%20security%2F2024-01-11_19-37-54.png)![2024-01-11_19-37-32.png](..%2F..%2FDesktop%2Fspring%20security%2F2024-01-11_19-37-32.png)

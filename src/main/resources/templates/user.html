@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>All users</title>
+</head>
+<body>
+<style>table {
+    border-spacing: 0 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+th {
+    padding: 10px 20px;
+    background: #06466c;
+    color: #17d8ec;
+    border-right: 2px solid;
+    font-size: 0.9em;
+}
+
+th:first-child {
+    text-align: left;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+td {
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    border-top: 2px solid #17d8ec;
+    border-bottom: 2px solid #17d8ec;
+    border-right: 2px solid #17d8ec;
+}
+
+td:first-child {
+    border-left: 2px solid #17d8ec;
+    border-right: none;
+}
+
+td:nth-child(2) {
+    text-align: left;
+}</style>
+<table>
+    <thead>
+    <tr>
+        <th>User name</th>
+        <th>surname</th>
+        <th>age</th>
+        <th>Role</th>
+        <th>Operations</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${oneUser}">
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.surname}"></td>
+        <td th:text="${user.age}"></td>
+        <td>
+
+        <span th:each="role : ${user.getRoles()}">
+            <span th:text="${role.getName()}"></span>
+        </span>
+        </td>
+        <td><a th:href="@{user/user-update/{id}(id=${user.id})}">
+            <input type="submit" value="Update"/></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/login}">
+    <input type="submit" value="Exit"/>
+</a>
+</body>
+</html>

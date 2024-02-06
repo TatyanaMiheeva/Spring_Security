@@ -1,0 +1,158 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Save user</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<style>table {-->
+<!--    border-spacing: 0 10px;-->
+<!--    font-family: 'Open Sans', sans-serif;-->
+<!--    font-weight: bold;-->
+<!--}-->
+
+<!--th {-->
+<!--    padding: 10px 20px;-->
+<!--    background: #06466c;-->
+<!--    color: #17d8ec;-->
+<!--    border-right: 2px solid;-->
+<!--    font-size: 0.9em;-->
+<!--}-->
+
+<!--th:first-child {-->
+<!--    text-align: left;-->
+<!--}-->
+
+<!--th:last-child {-->
+<!--    border-right: none;-->
+<!--}-->
+
+<!--td {-->
+<!--    vertical-align: middle;-->
+<!--    padding: 10px;-->
+<!--    font-size: 14px;-->
+<!--    text-align: center;-->
+<!--    border-top: 2px solid #17d8ec;-->
+<!--    border-bottom: 2px solid #17d8ec;-->
+<!--    border-right: 2px solid #17d8ec;-->
+<!--}-->
+
+<!--td:first-child {-->
+<!--    border-left: 2px solid #17d8ec;-->
+<!--    border-right: none;-->
+<!--}-->
+
+<!--td:nth-child(2) {-->
+<!--    text-align: left;-->
+<!--}</style>-->
+<!--<form th:method="POST" th:action="@{/admin/user-save}" th:object="${user}">-->
+<!--    <label for="email">User name: </label>-->
+<!--    <input type="text" th:field="*{username}" id="email">-->
+<!--    <br>-->
+<!--    <label for="email">surname: </label>-->
+<!--    <input type="text" th:field="*{surname}" id="surname">-->
+<!--    <br>-->
+<!--    <label for="email">age: </label>-->
+<!--    <input type="text" th:field="*{age}" id="age">-->
+<!--    <br>-->
+<!--    <label for="password">Password: </label>-->
+<!--    <input type="text" th:field="*{password}" id="password">-->
+<!--    <br>-->
+<!--    <select name="nameRoles" multiple size="2">-->
+<!--        <option th:each="role : ${roles}"-->
+<!--                th:value="${role.name}"-->
+<!--                th:text="${role.getName()}">-->
+<!--        </option>-->
+<!--    </select>-->
+<!--    <br>-->
+<!--    <input type="submit" value="Create user">-->
+
+<!--</form>-->
+
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Save user</title>
+    <style>
+        table {
+            border-spacing: 0 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+        }
+
+        th {
+            padding: 10px 20px;
+            background: #06466c;
+            color: #17d8ec;
+            border-right: 2px solid;
+            font-size: 0.9em;
+        }
+
+        th:first-child {
+            text-align: left;
+        }
+
+        th:last-child {
+            border-right: none;
+        }
+
+        td {
+            vertical-align: middle;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+            border-top: 2px solid #17d8ec;
+            border-bottom: 2px solid #17d8ec;
+            border-right: 2px solid #17d8ec;
+        }
+
+        td:first-child {
+            border-left: 2px solid #17d8ec;
+            border-right: none;
+        }
+
+        td:nth-child(2) {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<form th:method="POST" th:action="@{/admin/user-save}" th:object="${user}">
+    <table>
+        <tr>
+            <th><label for="email">User name:</label></th>
+            <td><input type="text" th:field="*{username}" id="email"></td>
+        </tr>
+        <tr>
+            <th><label for="email">Surname:</label></th>
+            <td><input type="text" th:field="*{surname}" id="surname"></td>
+        </tr>
+        <tr>
+            <th><label for="email">Age:</label></th>
+            <td><input type="text" th:field="*{age}" id="age"></td>
+        </tr>
+        <tr>
+            <th><label for="password">Password:</label></th>
+            <td><input type="text" th:field="*{password}" id="password"></td>
+        </tr>
+        <tr>
+            <th><label name="nameRoles">Roles:</label></th>
+            <td>
+                <select name="nameRoles" multiple size="2">
+                    <option th:each="role : ${roles}"
+                            th:value="${role.name}"
+                            th:text="${role.getName()}">
+                    </option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="Create user">
+</form>
+</body>
+</html>
